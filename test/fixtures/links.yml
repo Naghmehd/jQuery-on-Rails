@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  'null': 
+  body: MyString
+  'null': 
+
+two:
+  title: MyString
+  'null': 
+  body: MyString
+  'null': 
