@@ -1,24 +1,19 @@
 class LinksController < ApplicationController
   def index
-     @links = link.paginate(:page => params[:page], :per_page => 25)
-    #  render template: "/links/index.html.erb"
+    @links = Link.all
   end
 
   def show #Get
-    link = find_link_by_id
-
+    link = Link.find(params[:id])
     if link
         @link = link
-        # render template: 'links/show.html.erb'
-      else
+    else    
         render_not_found
     end
   end
-  private
 
-  def find_link_by_id
-    link.find(params['id'].to_i)
-  end
+
+  private
 
   def render_not_found
     render template: "links/not_found.html.erb"

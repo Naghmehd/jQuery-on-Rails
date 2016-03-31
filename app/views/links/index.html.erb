@@ -1,0 +1,16 @@
+<h1> Reddit Homepage </h1>
+
+<div>
+ <ol>
+ <% @links.each do |link| %>
+   <li>
+     <a href="<%= link.title %>"><%= link.title %></a>
+     <p><%= link.user.username %> </p>
+     <p><%= link.scores %></p>
+     <%= button_to 'Up Vote', upvote_link_path(link.id),  method: :post %>
+   </li>
+ <% end %>
+
+
+ </ol>
+</div>

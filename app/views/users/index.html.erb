@@ -1,13 +1,12 @@
 
  <h1> All Users </h1>
 
-
 <div>
  <ol>
  <% @users.each do |user| %>
-   <li><p>Name: <%= user.full_name %> </p>
-   <p>Reddit Handle: <%= user.username %> </p>
    <a href="/users/<%= user.id %>" > show this user links</a>
+   <p>Reddit Handle: <%= user.username %> </p>
+
  <% end %>
  </ol>
 </div>
