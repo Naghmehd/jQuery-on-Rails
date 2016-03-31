@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     if user
       @user = user
-      @tweets = @user.tweets
+      @links = @user.links
       render template: '/users/show.html.erb'
     else
       render_not_found
