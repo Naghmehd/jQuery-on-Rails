@@ -14,11 +14,14 @@
 ActiveRecord::Schema.define(version: 20160331190128) do
 
   create_table "links", force: :cascade do |t|
-    t.string   "title"
+    t.integer  "user_id"
+    t.string   "title",      null: false
     t.string   "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "links", ["user_id"], name: "index_links_on_user_id"
 
   create_table "upvotes", force: :cascade do |t|
     t.integer  "link_id"
@@ -29,11 +32,8 @@ ActiveRecord::Schema.define(version: 20160331190128) do
   add_index "upvotes", ["link_id"], name: "index_upvotes_on_link_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "null"
-    t.string   "false"
-    t.string   "[]"
-    t.string   "username"
+    t.string   "full_name",  null: false
+    t.string   "username",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

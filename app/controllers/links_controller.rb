@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
   def index
      @links = link.paginate(:page => params[:page], :per_page => 25)
-     render template: "/links/index.html.erb"
+    #  render template: "/links/index.html.erb"
   end
 
   def show #Get
@@ -9,7 +9,7 @@ class LinksController < ApplicationController
 
     if link
         @link = link
-        render template: 'links/show.html.erb'
+        # render template: 'links/show.html.erb'
       else
         render_not_found
     end
