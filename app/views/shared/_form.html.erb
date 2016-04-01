@@ -11,7 +11,7 @@
       <div class='row'>
         <div class='three columns'>
           <%= l.label :user_id %>
-          <%= l.text_field :user_id, class: 'input-field name', placeholder: "Name" %>
+          <%= l.select :user_id, options_for_select(User.all.map { |user| [user.username, user.id] }), class: 'input-field user_id', placeholder: "Type here..." %>
         </div>
         <div class='three columns'>
           <%= l.label :title %>

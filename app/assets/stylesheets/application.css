@@ -10,12 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *=require skeleton
  *= require_tree .
  *= require_self
  */
 
-=require normalize
-=require skeleton
+
 
 .navbar {
   background-color: #447b99;
@@ -23,13 +23,13 @@
 }
 
 .navbar-brand {
-  color: #444;
+  color: #fff;
   margin: 0 1em;
 }
 
-/*.container {
+.container {
   margin: 0;
   margin-bottom: 8px;
   padding-left: 3px;
-  background-color: #a5ddf3;
-}*/
+  background-color: #fff;
+}

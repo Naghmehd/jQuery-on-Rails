@@ -1,7 +1,19 @@
 class LinksController < ApplicationController
+
   def index
-    # @links = Link.all
-    @links = Link.all.sort_by { |l| [l.scores, l.title] }.reverse!
+    all_links = Link.all.sort_by { |l| [l.scores, l.title] }.reverse!
+
+    current_page = params[:page].to_i
+    if current_page <= 1
+      start_number = 0
+      end_number = 10
+    else
+      start_number = current_page + 10
+      end_number = current_page * 10
+    end
+
+    @links = all_links[start_number..end_number]
+
   end
 
   def show # Get

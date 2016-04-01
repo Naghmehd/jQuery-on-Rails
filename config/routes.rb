@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :links
   post '/upvotes/:link_id', to: 'upvotes#create_upvote', as: 'upvote_link'
+  post '/downvotes/:link_id', to: 'downvotes#create_downvote', as: 'downvote_link'
   resources :upvotes
 
   # The priority is based upon order of creation: first created -> highest priority.
