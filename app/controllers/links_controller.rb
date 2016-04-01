@@ -11,18 +11,23 @@ class LinksController < ApplicationController
     else
       render_not_found
     end
-
-    def create # link
-
-      Links.push(
-        link.new(params[:user_id], params[:title], params[:body], true)
-      )
-
-      redirect_to '/links'
-    end
   end
 
+  def create # link
+
+    Link.create(user_id: params[:link][:user_id],
+                title: params[:link][:title],
+                body:params[:link][:body])
+
+    redirect_to '/links'
+  end
+
+
   private
+
+  def find_link_by_id
+    Link.find { |l| l.id == params[:use.id].to_i }
+  end
 
   def render_not_found
     render template: 'links/not_found.html.erb'
