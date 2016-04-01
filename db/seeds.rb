@@ -16,7 +16,7 @@
     rand(1..100).times do
       Upvote.create!(link_id: link.id)
 
-      rand(100..1).times do
+      rand(1..100).times do
         Downvote.create!(link_id: link.id)
       end
     end
