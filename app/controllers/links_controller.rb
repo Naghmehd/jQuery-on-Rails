@@ -1,15 +1,18 @@
 class LinksController < ApplicationController
   def index
-    @links = Link.all
+    # @links = Link.all
+    @links = Link.all.sort_by { |l| [l.scores, l.title] }.reverse!
   end
 
   def show #Get
     link = Link.find(params[:id])
     if link
         @link = link
-    else    
+    else
         render_not_found
     end
+
+
   end
 
 

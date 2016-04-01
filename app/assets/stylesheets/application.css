@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+=require normalize
+=require skeleton
+
+.navbar {
+  background-color: #447b99;
+
+}
+
+.navbar-brand {
+  color: #444;
+  margin: 0 1em;
+}
+
+/*.container {
+  margin: 0;
+  margin-bottom: 8px;
+  padding-left: 3px;
+  background-color: #a5ddf3;
+}*/
