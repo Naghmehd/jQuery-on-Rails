@@ -6,7 +6,7 @@ class Link < ActiveRecord::Base
   validates :title, presence: true
 
   def scores
-    upvotes.count 
+    upvotes.count - downvotes.count
   end
 
   def vote
