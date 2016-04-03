@@ -3,8 +3,8 @@
 <div class="all_comment">
   <ul>
     <% @comments.each do |comment| %>
-      <li><%= comment.message %> </br>
-      
+      <li><%= comment.link %> </br>
+
         <a href="/comments/<%= comment.comment_id %>">show</a>
       </li>
     <% end %>

@@ -4,9 +4,10 @@
 <div>
  <ol>
  <% @users.each do |user| %>
-   <a href="/users/<%= user.id %>" > show this user links</a>
-   <p>Reddit Handle: <%= user.username %> </p>
-
- <% end %>
+    <div class="user_box">
+       <a href="/users/<%= user.id %>" > show this user links</a>
+       <p class="user_p">Reddit Handle: <%= user.username %> </p>
+    </div>
+     <% end %>
  </ol>
 </div>

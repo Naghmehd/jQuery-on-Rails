@@ -66,3 +66,15 @@ form input.button {
 div.row.link_box_bottom {
   margin-bottom: 0px;
 }
+
+div.user_box {
+  background-color: #f5f9fb;
+  margin: 20px 0;
+  padding: 1em 1em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+  border: 1px solid rgba(0, 0, 0, .05);
+  border-radius: 3px;
+}
+p.user_p {
+  margin-bottom:  0.5em;
+}
