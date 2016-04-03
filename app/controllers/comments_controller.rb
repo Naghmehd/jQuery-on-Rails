@@ -11,5 +11,10 @@ class CommentsController < ApplicationController
     else
       render_not_found
     end
-  end 
+  end
+  private
+
+  def find_comment_by_id
+    Comment.find(params['id'].to_i)
+  end
 end

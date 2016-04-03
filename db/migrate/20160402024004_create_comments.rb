@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.belongs_to :link, index: true, foreign_key: true
       t.belongs_to :user, index: true, foreign_key: true
 
-      t.string :body, null: false
+      t.string :message, null: false
       t.timestamps null: false
     end
   end

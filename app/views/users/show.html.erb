@@ -1,8 +1,16 @@
 
   <ul>
     <% @links.each do |link| %>
-      <li><%= link.id %> </li>
+      <a href="<%= link.title %>"><%= link.title %></a>
+        <p>User: <%= link.user.username unless link.user.blank? %> </p>
     <% end %>
+
+
+    </div>
+    <p>
+      <a href="/links">Go to All links</a>
+    </p>
+
     <p>
       <a href="/users">Go to All users</a>
     </p>

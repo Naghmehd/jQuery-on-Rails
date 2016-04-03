@@ -1,2 +1,6 @@
-<h1> All the links!! </h1>
-<%= @link.inspect %>
+<h1>linked by: <%= link.user.username unless link.user.blank? %> </h>
+
+<div class="show_links">
+  <a href="<%= link.title %>"><%= link.title %></a>
+
+</div>

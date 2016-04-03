@@ -14,6 +14,8 @@ class LinksController < ApplicationController
 
     @links = all_links[start_number..end_number]
 
+
+
   end
 
   def show # Get
@@ -38,7 +40,7 @@ class LinksController < ApplicationController
   private
 
   def find_link_by_id
-    Link.find { |l| l.id == params[:use.id].to_i }
+    Link.find { |l| l.id == params[:user.id].to_i }
   end
 
   def render_not_found

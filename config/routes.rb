@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :links
+  get '/links' => redirect('/links/show')
   post '/upvotes/:link_id', to: 'upvotes#create_upvote', as: 'upvote_link'
   post '/downvotes/:link_id', to: 'downvotes#create_downvote', as: 'downvote_link'
   resources :upvotes

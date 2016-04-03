@@ -13,10 +13,10 @@
                         body: Faker::Hipster.sentence,
                         user_id: user.id)
 
-    rand(1..20).times do
+    rand(1..2).times do
       Upvote.create!(link_id: link.id)
 
-      rand(1..2).times do
+    rand(0..1).times do
         Downvote.create!(link_id: link.id)
 
         rand(1..3).times do
