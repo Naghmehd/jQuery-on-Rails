@@ -11,12 +11,12 @@ class CommentsController < ApplicationController
     else
       render_not_found
     end
-    redirect_to '/links'
+      redirect_to '/links'
   end
 
   private
 
   def find_comment_by_id
-    Comment.find(params['id'].to_i)
+    Comment.find(params[:link_id].to_i)
   end
 end

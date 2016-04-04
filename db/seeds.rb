@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-10.times do
+20.times do
   user = User.create!(full_name: Faker::Name.name,
                       username: Faker::Internet.user_name)
   3.times do
@@ -13,16 +13,17 @@
                         body: Faker::Hipster.sentence,
                         user_id: user.id)
 
-    rand(1..2).times do
+    rand(2..6).times do
       Upvote.create!(link_id: link.id)
 
-    rand(0..1).times do
+    rand(1..2).times do
         Downvote.create!(link_id: link.id)
 
         rand(1..3).times do
           Comment.create!(link_id: link.id,
                           user_id: user.id,
-                          message: Faker::Hipster.sentence)
+                          message: Faker::Hipster.sentence,
+                          author:  Faker::Name.name)
         end
       end
     end
