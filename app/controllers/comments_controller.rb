@@ -11,7 +11,9 @@ class CommentsController < ApplicationController
     else
       render_not_found
     end
+    redirect_to '/links'
   end
+
   private
 
   def find_comment_by_id
