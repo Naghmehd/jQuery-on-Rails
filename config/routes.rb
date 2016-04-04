@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post '/downvotes/:link_id', to: 'downvotes#create_downvote', as: 'downvote_link'
   resources :upvotes
 
+  root 'link#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
