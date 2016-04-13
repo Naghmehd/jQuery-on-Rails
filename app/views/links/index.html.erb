@@ -1,6 +1,11 @@
 <h1> Reddit Homepage </h1>
 
-<p><a href="/links/new"</a>Create New Link</p>
+<p><a href="/links/new">Create New Link</a></p>
+
+  <div id="top-story">
+    Highlight The Top Post
+  </div>
+
 <div>
  <ol>
  <% @links.each do |link| %>
@@ -30,6 +35,6 @@
   <p><%= link_to "back page", "/links?page=#{params[:page].to_i - 1}" %></p>
   <% end %>
 
-  
+
 
 </div>
