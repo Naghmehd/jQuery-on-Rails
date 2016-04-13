@@ -8,25 +8,26 @@
 
 <div>
  <ol>
- <% @links.each do |link| %>
-  <li >
-    <div class="link_box">
-     <a href="<%= link.title %>"><%= link.title %></a>
-     <p>Posted by: <%= link.user.username unless link.user.blank? %> </p>
+   <div class="post-children">
+    <% @links.each do |link| %>
+      <li>
+        <div class="link_box">
+         <a href="<%= link.title %>"><%= link.title %></a>
+         <p>Posted by: <%= link.user.username unless link.user.blank? %> </p>
+          <div class="row link_box_bottom">
+            <div class="two columns vote_buttons">
+              <%= button_to 'Up Vote', upvote_link_path(link.id),  method: :post, class: 'button'%>
+              <p class="scores">Total Votes: <%= link.scores %></p>
+              <%= button_to 'Down Vote', downvote_link_path(link.id),  method: :post, class: 'button'%>
+            </div>
+          </div>
 
-
-      <div class="row link_box_bottom">
-        <div class="two columns vote_buttons">
-          <%= button_to 'Up Vote', upvote_link_path(link.id),  method: :post, class: 'button'%>
-          <p class="scores">Total Votes: <%= link.scores %></p>
-          <%= button_to 'Down Vote', downvote_link_path(link.id),  method: :post, class: 'button'%>
         </div>
-      </div>
-    </div>
-   </li>
+       </li>
     <% end %>
-
+  </div>
  </ol>
+
  <% if params[:page].to_i == 0 %>
  <% params[:page] = 1 %>
  <% end %>

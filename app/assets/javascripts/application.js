@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14,3 +15,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+$("#top-story").on("click", function () {
+ $(".post-children li:first-child .link_box").toggleClass("change-color");
+});
+
+$("#top-story").on("click",function () {
+            var count = $(this).data("count") || 0;
+            $(this).data("count", ++count);
+            console.log("Link clicked " + count + " times.");
+});
