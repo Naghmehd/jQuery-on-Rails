@@ -7,6 +7,8 @@ class DownvotesController < ApplicationController
     @downvote = Downvote.new
     @downvote.link = Link.find(params[:link_id])
     @downvote.save
-    redirect_to :back
+    
+
+    render json: { scores: @downvote.link.scores }
   end
 end

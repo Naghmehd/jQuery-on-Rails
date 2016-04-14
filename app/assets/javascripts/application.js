@@ -27,3 +27,10 @@ $("#top-story").on("click",function () {
             $(this).data("count", ++count);
             console.log("Link clicked " + count + " times.");
 });
+
+$("#new_score").bind("ajax:success", function(event,xhr){
+  $('link.scores').val('');
+});
+
+
+  
